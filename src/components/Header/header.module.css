@@ -1,0 +1,29 @@
+.header {
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    grid-template-rows: auto;
+    text-align: center;
+    background-color: antiquewhite;
+}
+
+.aboutUs {
+    grid-column: 2 / 4;
+}
+
+.latestBills {
+    grid-column: 4 / 6;
+}
+
+.trackingBills {
+    grid-column: 6 / 8;
+}
+
+
+
+.signUp {
+    grid-column: 10 / 12;
+}
+
+.login {
+    grid-column: 12 / 14;
+}
