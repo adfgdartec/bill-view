@@ -1,25 +1,51 @@
+// Components
 import Logo from "../Logo/Logo";
-import Button from '@mui/material/Button';
 import Navigator from "../Navigator";
+import Avatar from '@mui/material/Avatar';
+import ActionButton from "../ActionButton/ActionButton";
 
+// Stylesheet
 import styles from './header.module.css';
-
 
 export default function Header(props) {
     return (
         <div className={styles.header}>
-            <Logo userAuth={props.userAuth} shortLogo={true}/>
-            
-            <Navigator location="/about-us"><p className={styles.aboutUs}>About Us</p></Navigator>
-            <Navigator location="/latest"><p className={styles.latestBills}>Latest Bills</p></Navigator>
-            
-            {/* User Auth */}
-            {props.userAuth && <Navigator location="/settings"><p className={styles.userProfile}>User Profile</p></Navigator>}
-            {props.userAuth && <Navigator location="/tracking"><p className={styles.trackingBills}>Tracking Bills</p></Navigator>}
+            <div className={styles.leftGroup}>
+                <Logo userAuth={props.userAuth} shortLogo={true} link={true}/>
+                
+                <Navigator location="/about-us">
+                    <p>About Us</p>
+                </Navigator>
+                <Navigator location="/latest">
+                    <p>Latest Bills</p>
+                </Navigator>
 
-            {/* Without User Auth */}
-            {!props.userAuth && <Navigator location="/sign-up"><Button variant="contained" className={styles.signUp}>Sign Up</Button></Navigator>}
-            {!props.userAuth && <Navigator location="/login"><Button variant="contained" className={styles.login}>Login</Button></Navigator>}
+                {props.userAuth && (
+                    <Navigator location="/tracking">
+                        <p>Tracking Bills</p>
+                    </Navigator>
+                )}
+            </div>
+
+            <div className={styles.rightGroup}>
+                {!props.userAuth ?
+                    (
+                        <>
+                            <ActionButton location='/sign-up' content="Sign Up" />
+                            <ActionButton location='/login' content='Login' />
+                        </>
+                    )
+                    :
+                        <>
+                            <Navigator location="/settings">
+                                <p>User Name</p>
+                            </Navigator>
+                            <Navigator>
+                                <Avatar>HG</Avatar>
+                            </Navigator>
+                        </>
+                }
+            </div>
         </div>
     );
 }

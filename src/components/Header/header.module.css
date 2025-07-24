@@ -1,37 +1,27 @@
 .header {
-    display: grid;
-    grid-template-columns: repeat(14, 1fr);
-    grid-template-rows: auto;
-    text-align: center;
-    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* push left & right groups apart */
+    padding: 0 20px; /* optional horizontal padding */
+    height: 60px; /* adjust as needed */
+    background-color: #fff; /* or your navbar background */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* subtle shadow */
 }
 
-.logo {
-    grid-column: 1 / 2;
+.leftGroup {
+    display: flex;
+    align-items: center;
+    gap: 8vw; /* space between logo and links */
 }
 
-.aboutUs {
-    grid-column: 2 / 4;
+.rightGroup {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* space between buttons */
 }
 
-.latestBills {
-    grid-column: 4 / 6;
-}
-
-.trackingBills {
-    grid-column: 6 / 8;
-}
-
-
-
-.signUp {
-    grid-column: 10 / 12;
-}
-
-.login {
-    grid-column: 12 / 14;
-}
-
-.userProfile {
-    grid-column: 10 / 14;
+/* Optional: style your buttons so they don't stretch */
+.signUp, .login {
+    width: auto;
+    min-width: 100px;
 }
