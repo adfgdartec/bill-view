@@ -8,7 +8,8 @@ import styles from './header.module.css';
 export default function Header(props) {
     return (
         <div className={styles.header}>
-            <Navigator location="/homepage"><Logo shortLogo={true} /></Navigator>
+            <Logo userAuth={props.userAuth} shortLogo={true}/>
+            
             <Navigator location="/about-us"><p className={styles.aboutUs}>About Us</p></Navigator>
             <Navigator location="/latest"><p className={styles.latestBills}>Latest Bills</p></Navigator>
             

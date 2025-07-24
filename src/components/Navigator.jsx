@@ -5,13 +5,16 @@ export default function Navigator(props) {
     const navigate = useNavigate();
 
     function handleClick(event) {
+        // console.log(props.location);
         if (props.onClick) {
             props.onClick(event);
         }
+        console.log(props.location);
         navigate(props.location);
     }
 
     // Expecting only one child (like a button, p, span, etc.)
+    // console.log(props.children);
     const child = Children.only(props.children);
 
     if (isValidElement(child)) {

@@ -6,6 +6,10 @@
     background-color: antiquewhite;
 }
 
+.logo {
+    grid-column: 1 / 2;
+}
+
 .aboutUs {
     grid-column: 2 / 4;
 }
@@ -26,4 +30,8 @@
 
 .login {
     grid-column: 12 / 14;
+}
+
+.userProfile {
+    grid-column: 10 / 14;
 }
