@@ -1,0 +1,38 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+    background-color: antiquewhite;
+    height: fit-content;
+    width: fit-content;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.textField {
+    width: 300px;
+}
+
+.actionButton {
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.signUpHere {
+    color: rgb(110, 110, 255);
+}
+
+p {
+    margin-top: 0;
+}
+
+.marginTop {
+    margin-top: 20px;
+}
+
+.logo {
+    margin-bottom: 30px;
+}

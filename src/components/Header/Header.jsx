@@ -16,6 +16,7 @@ export default function Header(props) {
                 <Navigator location="/about-us">
                     <p>About Us</p>
                 </Navigator>
+                
                 <Navigator location="/latest">
                     <p>Latest Bills</p>
                 </Navigator>
