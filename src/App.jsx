@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // Pages Imports
 import LandingPage from './pages/LandingPage.jsx';
-import Homepage from './pages/Homepage.jsx';
+import Homepage from './pages/Homepage/Homepage.jsx';
 import Latest from './pages/Latest.jsx';
 import Login from './pages/Login/Login.jsx';
 import Settings from './pages/Settings.jsx';
