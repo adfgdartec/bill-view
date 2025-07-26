@@ -9,21 +9,46 @@ import styles from './bill.module.css';
 
 
 export default function Bill(props) {
-    const [currentView, setCurrentView] = useState(props.currentView);
-
-    function decrease() {
-        setCurrentView(currentView - 1);
-    }
-
-    function increase() {
-        setCurrentView(currentView + 1);
-    }
+    const [view, setView] = useState("small");
     
     return (
         <div className={styles.container}>
-            {currentView === 0 && <SmallBill decrease={decrease} />}
-            {currentView === 1 && <MediumBill decrease={decrease} increase={increase} />}
-            {currentView === 2 && <LargeBill  increase={increase} />}
+            {view === "small" && 
+                <SmallBill
+                    view={view}
+                    setView={setView}
+                    billName={props.bill.billName}
+                    presenterInfo={props.bill.presenterInfo}
+                    billStatistics={props.bill.billStatistics}
+                    summaries={props.bill.summaries}
+                    topics={props.bill.topics}
+                    news={props.bill.news}
+                />
+            }
+            {view === "medium" &&
+                <MediumBill
+                    view={view}
+                    setView={setView}
+                    billName={props.bill.billName}
+                    presenterInfo={props.bill.presenterInfo}
+                    billStatistics={props.bill.billStatistics}
+                    summaries={props.bill.summaries}
+                    topics={props.bill.topics}
+                    news={props.bill.news}
+                />
+            }
+            {view === "large" && 
+                <LargeBill
+                    view={view}
+                    setView={setView}
+                    billName={props.bill.billName}
+                    presenterInfo={props.bill.presenterInfo}
+                    billStatistics={props.bill.billStatistics}
+                    summaries={props.bill.summaries}
+                    topics={props.bill.topics}
+                    news={props.bill.news}
+                />
+            }
         </div>
     );
 }

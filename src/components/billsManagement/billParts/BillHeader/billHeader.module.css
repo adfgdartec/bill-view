@@ -11,6 +11,11 @@
     width: 100%;
 }
 
+.icons {
+    display: flex;
+    gap: 8px;
+}
+
 /* .bookmarkIcon {
     float: right;
 } */

@@ -7,9 +7,13 @@ export default function Article(props) {
             <p>News Articles:</p>
             <div>
                 {props.news.map(data => 
-                    <a href={data.link} key={data.id}>
+                    <a href={data.link} key={data.id} className={styles.link}>
                         <div className={styles.article}>
-                            <p>{data.channelLogo} {data.title}</p>
+                            <div className={styles.header}>
+                                <img src={data.channelLogo}/>
+                                <p>{data.title}</p>
+                            </div>
+                            
                             <p>{data.content}</p>
                         </div>
                     </a>

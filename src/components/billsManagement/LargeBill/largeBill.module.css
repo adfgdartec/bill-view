@@ -1,6 +1,6 @@
 .container {
     margin: 30px;
-    width: 100%;
+    width: -webkit-fill-available;
     height: fit-content;
     background-color: rgb(167, 167, 167);
     border-radius: 12px;
