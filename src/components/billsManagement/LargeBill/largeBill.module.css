@@ -1,0 +1,35 @@
+.container {
+    margin: 30px;
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(167, 167, 167);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Optional: adds spacing */
+  gap: 1rem; /* Optional: space between divs */
+}
+
+/* .infoContainer > div {
+  flex: 1; 
+  min-width: 0; 
+} */
+
+.infoSegment {
+    flex: 3;
+    margin: 5px;
+}
+
+.presenterInfo {
+    flex: 1;
+    margin: 5px;
+}
+
+.infoSummary {
+    flex: 3;
+    margin: 5px;
+}

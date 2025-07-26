@@ -27,9 +27,9 @@ export default function Logo(props) {
     } else {
         return (
             props.shortLogo ?
-                <p className={`${styles.logo} ${props.className}`}>BV</p>
+                <span className={`${styles.logo} ${props.className}`}>BV</span>
             :
-                <p className={`${styles.logo} ${props.className}`}>Bill View</p>
+                <span className={`${styles.logo} ${props.className}`}>Bill View</span>
         );
     }
 }

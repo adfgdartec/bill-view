@@ -1,0 +1,13 @@
+.container {
+    width: 350px;
+    height: 400px;
+    padding: 20px;
+    background-color: rgb(177, 177, 177);
+    border-radius: 12px;
+}
+
+.infoContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}

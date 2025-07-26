@@ -1,0 +1,12 @@
+.topic {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    gap: 8px;
+    margin: 10px;
+}
+
+.horizontal {
+    display: flex;
+    flex-wrap: wrap;
+}
