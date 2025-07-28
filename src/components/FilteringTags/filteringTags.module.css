@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 2px;
+    background-color: antiquewhite;
+}
+
+.addTagLabel {
+    margin-left: 10px;
+    width: max-content;
+    white-space: nowrap;
+
+    font-size: 14px;
+}
+
+.tags {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;       /* enable horizontal scroll when needed */
+    
+    width: 80vw;      /* max container width */
+    gap: 16px;
+}
+
+.tags {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100,100,100,0.5) transparent; /* for Firefox */
+    /* padding-bottom: 4px; helps with scrollbar visibility */
+}
+
+.tags::-webkit-scrollbar {
+    height: 6px;
+}
+
+.tags::-webkit-scrollbar-thumb {
+    background: rgba(100,100,100,0.5);
+    border-radius: 4px;
+}
