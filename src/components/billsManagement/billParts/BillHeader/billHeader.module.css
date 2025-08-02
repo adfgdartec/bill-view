@@ -16,6 +16,14 @@
     gap: 8px;
 }
 
+.isTracked {
+    color: blue;
+}
+
+.isNotTracked {
+    color: black;
+}
+
 /* .bookmarkIcon {
     float: right;
 } */

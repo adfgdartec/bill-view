@@ -12,7 +12,15 @@ import styles from './mediumBill.module.css';
 export default function MediumBill(props) {
     return (
         <div className={styles.container}>
-            <BillHeader billName={props.billName} view={props.view} setView={props.setView} />
+            <BillHeader
+                billName={props.billName}
+                view={props.view}
+                setView={props.setView}
+                id={props.id}
+                addTrackingBills={props.addTrackingBills}
+                removeTrackingBills={props.removeTrackingBills}
+                isTracked={props.isTracked}
+            />
 
             <div className={styles.infoContainer}>
                 <Presenter presenterInfo={props.presenterInfo} />

@@ -15,9 +15,6 @@ export default function Homepage() {
     // The questions part, in editing 
     const [showUserSetup, setShowUserSetup] = useState(false);
 
-    const trackingBills = [];
-    const latestBills = [];
-
     return (
         <div>
             <UserSetup showUserSetup={showUserSetup} setShowUserSetup={setShowUserSetup} />
@@ -26,12 +23,12 @@ export default function Homepage() {
             <div className={styles.container}>
                 <div className={styles.left}>
                     <p>Latest Bills</p>
-                    <BillsViewer data={latestBills}/>
+                    <BillsViewer type='bills'/>
                 </div>
 
                 <div className={styles.right}>
                     <p>Tracking Bills</p>
-                    <BillsViewer data={trackingBills} />
+                    <BillsViewer type='trackingBills' />
                 </div>
             </div>
         </div>

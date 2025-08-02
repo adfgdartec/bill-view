@@ -15,6 +15,11 @@ export default function Bill(props) {
         <div className={styles.container}>
             {view === "small" && 
                 <SmallBill
+                    id={props.id}
+                    addTrackingBills={props.addTrackingBills}
+                    removeTrackingBills={props.removeTrackingBills}
+                    isTracked={props.bill.isTracked}
+
                     view={view}
                     setView={setView}
                     billName={props.bill.billName}
@@ -27,8 +32,14 @@ export default function Bill(props) {
             }
             {view === "medium" &&
                 <MediumBill
+                    id={props.id}
+                    addTrackingBills={props.addTrackingBills}
+                    removeTrackingBills={props.removeTrackingBills}
+                    isTracked={props.bill.isTracked}
+
                     view={view}
                     setView={setView}
+                    
                     billName={props.bill.billName}
                     presenterInfo={props.bill.presenterInfo}
                     billStatistics={props.bill.billStatistics}
@@ -39,8 +50,14 @@ export default function Bill(props) {
             }
             {view === "large" && 
                 <LargeBill
+                    id={props.id}
+                    addTrackingBills={props.addTrackingBills}
+                    removeTrackingBills={props.removeTrackingBills}
+                    isTracked={props.bill.isTracked}
+
                     view={view}
                     setView={setView}
+
                     billName={props.bill.billName}
                     presenterInfo={props.bill.presenterInfo}
                     billStatistics={props.bill.billStatistics}

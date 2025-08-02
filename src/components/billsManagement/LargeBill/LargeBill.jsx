@@ -53,7 +53,15 @@ import styles from './largeBill.module.css';
 export default function LargeBill(props) {
     return (
         <div className={styles.container} onClick={() => props.onClick()}>
-            <BillHeader billName={props.billName} view={props.view} setView={props.setView} />
+            <BillHeader
+                billName={props.billName}
+                view={props.view}
+                setView={props.setView}
+                id={props.id}
+                addTrackingBills={props.addTrackingBills}
+                removeTrackingBills={props.removeTrackingBills}
+                isTracked={props.isTracked}
+            />
 
             <div className={styles.infoContainer}>
                 <div className={styles.presenterInfo}>

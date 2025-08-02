@@ -10,7 +10,15 @@ export default function BillHeader(props) {
         <div className={styles.container}>
             <p className={styles.name}>{props.billName}</p>
             <div className={styles.icons}>
-                <BookmarkIcon className={styles.bookmarkIcon} />
+                <div
+                    id={props.id}
+                    onClick={props.isTracked ? (event) => props.removeTrackingBills(event) : (event) => props.addTrackingBills(event)}
+                >
+                    <BookmarkIcon
+                        className={`${styles.bookmarkIcon} ${props.isTracked ? styles.isTracked : styles.isNotTracked}`}
+                    />
+                </div>
+                
                 <SizeSelector setView={props.setView} view={props.view} />
             </div>
         </div>
