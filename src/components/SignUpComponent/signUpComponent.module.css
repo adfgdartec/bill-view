@@ -3,12 +3,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
     
     
-    background-color: antiquewhite;
+    background-color: var(--card-bg-color);
     height: fit-content;
     width: fit-content;
-    padding: 20px;
+    padding: 3vw;
     border-radius: 8px;
 }
 
@@ -18,20 +19,17 @@
 
 .actionButton {
     width: 300px;
+    margin-bottom: 20px !important;
 }
 
 .loginHere {
-    color: rgb(110, 110, 255);
+    color: var(--action-text);
 }
 
-p {
-    margin-top: 0;
-}
-
-.marginTop {
-    margin-top: 20px;
+.title {
+    font-size: 25px;
 }
 
 .logo {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }

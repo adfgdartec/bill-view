@@ -1,10 +1,10 @@
 .container {
-    margin: 30px;
-    width: -webkit-fill-available;
-    height: fit-content;
-    background-color: rgb(167, 167, 167);
-    border-radius: 12px;
-    padding: 20px;
+  margin: 30px;
+  width: -webkit-fill-available;
+  height: fit-content;
+  background-color: var(--card-bg-color);
+  border-radius: 12px;
+  padding: 20px;
 }
 
 .infoContainer {

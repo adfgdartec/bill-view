@@ -1,5 +1,6 @@
 // React Imports
 import { useState, useEffect } from 'react';
+import { useMemo } from 'react';
 
 // Components
 import FilteringTags from "../components/FilteringTags/FilteringTags";
@@ -9,7 +10,28 @@ import Bill from "../components/billsManagement/Bill/Bill";
 
 export default function Latest() {
     // All tags shown to the user
-    const [tags, setTags] = useState([]);
+    const [tags, setTags] = useState([
+        {
+            id: 1,
+            selected: false,
+            label: "text"
+        },
+        {
+            id: 2,
+            selected: false,
+            label: "extended text"
+        },
+        {
+            id: 3,
+            selected: false,
+            label: "extended text"
+        },
+        {
+            id: 4,
+            selected: false,
+            label: "extended text"
+        }
+    ]);
 
     // TODO: Somehow include search bar as a filtering thing
     const [searchInput, setSearchInput] = useState('');
@@ -76,7 +98,10 @@ export default function Latest() {
     const [trackingBills, setTrackingBills] = useState([]);
     const [filteredBills, setFilteredBills] = useState([]);
     const [filteredTrackingBills, setFilteredTrackingBills] = useState([]);
-    let trackingTags = tags.filter(tag => tag.selected);
+    const trackingTags = useMemo(
+        () => tags.filter(tag => tag.selected),
+        [tags]
+    );
     // Update isTracked property when trackingBills changes
     useEffect(() => {
         const trackingBillsIds = trackingBills.map(bill => bill.id);
@@ -89,8 +114,12 @@ export default function Latest() {
     // Filter bills when props.filter or bills change
     useEffect(() => {
         if (trackingTags.length !== 0) {
-            setFilteredBills(bills => bills.filter(bill => trackingTags.includes(bill.topic)));
-            setFilteredTrackingBills(trackingBills => trackingBills.filter(bill => trackingTags.filter.includes(bill.topic)));
+            setFilteredBills(bills.filter(bill =>
+                trackingTags.some(tag => tag.label === bill.topic)
+            ));
+            setFilteredTrackingBills(trackingBills.filter(bill =>
+                trackingTags.some(tag => tag.label === bill.topic)
+            ));
         } else {
             setFilteredBills(bills);
             setFilteredTrackingBills(trackingBills);

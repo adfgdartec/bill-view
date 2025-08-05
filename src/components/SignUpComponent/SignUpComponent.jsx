@@ -11,7 +11,7 @@ import styles from './signUpComponent.module.css';
 export default function SignUpComponent() {
     return (
         <div className={styles.signUp}>
-            <p className={styles.logo}>Welcome to</p>
+            <p className={styles.title}>Welcome to</p>
             <Logo shortLogo={false} link={false} className={styles.logo}/>
 
             <TextField
@@ -20,9 +20,6 @@ export default function SignUpComponent() {
                 type="username"
                 size="small"
                 variant="outlined"
-                sx={{
-                    marginBottom: "30px"
-                }}
             />
 
             <TextField
@@ -32,7 +29,7 @@ export default function SignUpComponent() {
                 size="small"
                 variant="outlined"
                 sx={{
-                    marginBottom: "30px"
+                    marginBottom: "20px"
                 }}
             />
 

@@ -10,7 +10,7 @@
     padding: 20px;
     margin: 20px;
     
-    background-color: antiquewhite;
+    background-color: var(--card-news-bg-color);
     border-radius: 8px;
 }
 

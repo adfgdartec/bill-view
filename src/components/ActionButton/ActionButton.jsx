@@ -10,10 +10,21 @@ export default function ActionButton(props) {
         <>
             {props.location ? 
                 <Navigator location={props.location}>
-                    <Button variant="contained" className={`${styles.button} ${props.className}`}>{props.content}</Button>
+                    <Button
+                        variant="contained"
+                        className={`${styles.button} ${props.className}`}
+                    >
+                        {props.content}
+                    </Button>
                 </Navigator>
                 :
-                <Button variant="contained" onClick={props.onClick} className={`${styles.button} ${props.className}`}>{props.content}</Button>
+                <Button
+                    variant="contained"
+                    onClick={props.onClick}
+                    className={`${styles.button} ${props.className}`}
+                >
+                    {props.content}
+                </Button>
             }
         </>
     );

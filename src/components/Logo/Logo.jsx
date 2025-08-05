@@ -8,28 +8,45 @@ export default function Logo(props) {
             props.shortLogo ? 
                 props.userAuth ?
                     <Navigator location="/homepage">
-                        <p className={`${styles.logo} ${props.className}`}>BV</p>
+                        <div className={`${styles.shortLogo} ${props.className}`}>
+                            <p className={styles.b}>B</p>
+                            <p className={styles.v}>V</p>
+                        </div>
                     </Navigator> 
                 : 
                     <Navigator location="/">
-                        <p className={`${styles.logo} ${props.className}`}>BV</p>
+                        <div className={`${styles.shortLogo} ${props.className}`}>
+                            <p className={styles.b}>B</p>
+                            <p className={styles.v}>V</p>
+                        </div>
                     </Navigator>
             :
                 props.userAuth ?
                     <Navigator location="/homepage">
-                        <p className={`${styles.logo} ${props.className}`}>Bill View</p>
+                        <div className={`${styles.logo} ${props.className}`}>
+                            <p>Bill</p>
+                            <p>View</p>
+                        </div>
                     </Navigator> 
                 : 
                     <Navigator location="/">
-                        <p className={`${styles.logo} ${props.className}`}>Bill View</p>
+                        <div className={`${styles.logo} ${props.className}`}>
+                            <p className={styles.bill}>Bill</p>
+                            <p className={styles.view}>View</p>
+                        </div>
                     </Navigator>
         );
     } else {
         return (
             props.shortLogo ?
-                <span className={`${styles.logo} ${props.className}`}>BV</span>
+                <div className={`${styles.shortLogo} ${props.className}`}>
+                    <p>BV</p>
+                </div>
             :
-                <span className={`${styles.logo} ${props.className}`}>Bill View</span>
+                <div className={`${styles.logo} ${props.className}`}>
+                    <p className={styles.bill}>Bill</p>
+                    <p className={styles.view}>View</p>
+                </div>
         );
     }
 }

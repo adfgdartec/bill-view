@@ -1,16 +1,16 @@
-import { createContext, useState, useContext } from 'react';
+// import { createContext, useState, useContext } from 'react';
 
-const UserContext = createContext();
+// const UserContext = createContext();
 
-export function UserProvider({ children }) {
-  const [user, setUser] = useState(null); // shared variable
-  return (
-    <UserContext.Provider value={{ user, setUser }}>
-      {children}
-    </UserContext.Provider>
-  );
-}
+// export function UserProvider({ children }) {
+//   const [user, setUser] = useState(null); // shared variable
+//   return (
+//     <UserContext.Provider value={{ user, setUser }}>
+//       {children}
+//     </UserContext.Provider>
+//   );
+// }
 
-export function useUser() {
-  return useContext(UserContext);
-}
+// export function useUser() {
+//   return useContext(UserContext);
+// }

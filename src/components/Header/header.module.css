@@ -1,12 +1,13 @@
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* push left & right groups apart */
+    justify-content: space-between;
     align-items: center;
-    padding: 0 20px; /* optional horizontal padding */
-    height: 60px; /* adjust as needed */
-    background-color: #fff; /* or your navbar background */
+    padding: 0 20px;
+    height: 60px;
+    background-color: var(--menu-bar-bg-color);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* subtle shadow */
+    color: var(--menu-bar-text-color);
 }
 
 .leftGroup {

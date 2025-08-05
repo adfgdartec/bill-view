@@ -1,0 +1,72 @@
+/* styles/themes.css */
+:root {
+  /* General Colors */
+  --bg-color: #F2F7FF;
+  --text-color: #000000;
+
+  /* Special Text */
+  --action-text: rgb(0, 0, 183);
+
+  /* Logo */
+  --logo-bg-color: #4BA0CA;
+  --logo-text-color-1: #000000;
+  --logo-text-color-2: #ffffff;
+
+  /* Buttons */
+  --button-bg-color: #84AFC4;
+  --button-text-color: #000000;
+  --action-button-bg-color: #00ACFF;
+  --action-button-text-color: #000000;
+
+  /* Menu Bar */
+  --menu-bar-bg-color: #E9F2FF;
+  --menu-bar-text-color: #000000;
+
+  /* Tags Selection Bar */
+  --tag-selection-bar-bg-color: #F2F7FF;
+
+  /* Tags Selection Bar Topics */
+  --tag-selection-bar-topic-selected-bg-color: #84AFC4;
+  --tag-selection-bar-topic-selected-text-color: #000000;
+  --tag-selection-bar-topic-unselected-bg-color: ;
+  --tag-selection-bar-topic-unselected-text-color: ;
+
+  /* Bill Colors */
+  --card-bg-color: #ffffff;
+  --card-icon-bg-color: #ffffff;
+  --card-news-bg-color: #ffffff;
+}
+
+[data-theme="dark"] {
+  /* General Colors */
+  --bg-color: ;
+  --card-bg-color: ;
+  --text-color: ;
+
+  /* Buttons */
+  --button-bg-color: ;
+  --button-text-color: ;
+  --action-button-bg-color: ;
+  --action-button-text-color: ;
+
+  /* Menu Bar */
+  --menu-bar-bg-color: ;
+  --menu-bar-text-color: ;
+}
+
+[data-theme="blue"] {
+  /* General Colors */
+  --bg-color: ;
+  --card-bg-color: ;
+  --text-color: ;
+
+  /* Buttons */
+  --button-bg-color: ;
+  --button-text-color: ;
+  --action-button-bg-color: ;
+  --action-button-text-color: ;
+
+  /* Menu Bar */
+  --menu-bar-bg-color: ;
+  --menu-bar-text-color: ;
+}

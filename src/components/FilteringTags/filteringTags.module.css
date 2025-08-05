@@ -3,7 +3,7 @@
     align-items: center;
     gap: 32px;
     padding: 2px;
-    background-color: antiquewhite;
+    background-color: var(--tag-selection-bar-bg-color);
 }
 
 .addTagLabel {
@@ -36,4 +36,14 @@
 .tags::-webkit-scrollbar-thumb {
     background: rgba(100,100,100,0.5);
     border-radius: 4px;
+}
+
+.tagSelected {
+    background-color: var(--tag-selection-bar-topic-selected-bg-color) !important;
+    color: var(--tag-selection-bar-topic-selected-text-color) !important;
+}
+
+.tagUnselected {
+    background-color: var(--tag-selection-bar-topic-unselected-bg-color) !important;
+    color: var(--tag-selection-bar-topic-unselected-text-color) !important;
 }

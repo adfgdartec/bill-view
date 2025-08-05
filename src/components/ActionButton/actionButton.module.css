@@ -2,4 +2,7 @@
     height: fit-content;
     width: auto;
     min-width: 100px;
+
+    background: var(--action-button-bg-color) !important;
+    color: var(--action-button-text-color) !important;
 }

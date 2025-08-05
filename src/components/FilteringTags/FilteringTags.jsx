@@ -7,6 +7,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import DoneIcon from '@mui/icons-material/Done';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 export default function FilteringTags(props) {
@@ -53,13 +54,8 @@ export default function FilteringTags(props) {
     }));
 
     function handleClick(event) {
-        props.setTags(tags => tags.map(tag => tag.id === event.target.id ? { ...tag, selected: event.target.variant } : tag));
-        props.filterBills();
-    }
-
-    function handleDelete(event) {
-        props.setTags(tags => tags.filter(tag => tag.id !== event.target.id));
-        props.filterBills();
+        const tagId = parseInt(event.currentTarget.id);
+        props.setTags(tags => tags.map(tag => tag.id === tagId ? { ...tag, selected: !tag.selected } : tag));
     }
 
     return (
@@ -67,17 +63,23 @@ export default function FilteringTags(props) {
             <p className={styles.addTagLabel}>Add Tags</p>
 
             <div className={styles.tags}>
-                {props.tags?.map(tag => 
-                    <Chip
-                        key={tag.id}
-                        id={tag.id}
-                        label={tag.label}
-                        onClick={handleClick}
-                        onDelete={handleDelete}
-                        deleteIcon={<DoneIcon />}
-                        variant="outlined"
-                        size="small"
-                    />
+                { console.log(props.tags) }
+                {props.tags?.map(tag => {
+                    return (
+                        <div
+                            key={tag.id}
+                            id={tag.id}
+                            onClick={handleClick}
+                        >
+                            <Chip
+                                label={tag.label}
+                                variant={tag.selected ? "filled" : "outlined"}
+                                className={tag.selected ? styles.tagSelected : styles.tagUnselected}
+                                size="small"
+                            />
+                        </div>
+                    );
+                }
                 )}
             </div>
             

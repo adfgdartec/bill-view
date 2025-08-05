@@ -11,7 +11,7 @@ export default function Topics(props) {
             <div className={`${styles.topics} ${styles[props.variant]}`}>
                 {props.topics.map(topic => 
                     <div key={topic.id} className={styles.topic}> 
-                        <Avatar variant="rounded" sx={{ width: 20, height: 20, padding: 1 }}>
+                        <Avatar variant="rounded" sx={{ width: 20, height: 20, padding: 1, background: "var(----card-icon-bg-color)" }}>
                             {topic.icon}
                         </Avatar>
                         <p>{topic.name}</p>
