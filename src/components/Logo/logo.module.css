@@ -9,6 +9,8 @@
     border-radius: 8px;
 }
 
+/* Inside another P tag causing problems */
+
 .shortLogo {
     display: flex;
     padding: 8px;

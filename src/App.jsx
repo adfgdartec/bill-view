@@ -11,7 +11,7 @@ import Login from './pages/Login/Login.jsx';
 import Settings from './pages/Settings.jsx';
 import SignUp from './pages/SignUp/SignUp.jsx';
 import Tracking from './pages/Tracking.jsx';
-import AboutUs from './pages/AboutUs.jsx';
+import AboutUs from './pages/AboutUs/AboutUs.jsx';
 
 // Style Imports
 import './styles/App.css';

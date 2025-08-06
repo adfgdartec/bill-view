@@ -35,6 +35,14 @@
   --card-bg-color: #ffffff;
   --card-icon-bg-color: #ffffff;
   --card-news-bg-color: #ffffff;
+
+  /* BillViewHeader */
+  --bill-view-header-bg-color: #F2F7FF;
+  --bill-view-header-text-color: #000000;
+
+  /* Homepage Colors */
+  --latest-bills-bg-color: #F2F7FF;
+  --tracking-bills-bg-color: #F2F7FF;
 }
 
 [data-theme="dark"] {

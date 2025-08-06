@@ -29,6 +29,10 @@
     min-width: 100px;
 }
 
-p {
-    margin: 0;
+.link {
+    margin: 0;   
+}
+
+.link:hover {
+  text-decoration: underline;
 }

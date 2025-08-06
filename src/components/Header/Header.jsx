@@ -14,16 +14,16 @@ export default function Header(props) {
                 <Logo userAuth={props.userAuth} shortLogo={true} link={true}/>
                 
                 <Navigator location="/about-us">
-                    <p>About Us</p>
+                    <p className={styles.link}>About Us</p>
                 </Navigator>
                 
                 <Navigator location="/latest">
-                    <p>Latest Bills</p>
+                    <p className={styles.link}>Latest Bills</p>
                 </Navigator>
 
                 {props.userAuth && (
                     <Navigator location="/tracking">
-                        <p>Tracking Bills</p>
+                        <p className={styles.link}>Tracking Bills</p>
                     </Navigator>
                 )}
             </div>
@@ -39,7 +39,7 @@ export default function Header(props) {
                     :
                         <>
                             <Navigator location="/settings">
-                                <p>User Name</p>
+                                <p className={styles.link}>User Name</p>
                             </Navigator>
                             <Navigator>
                                 <Avatar>HG</Avatar>
