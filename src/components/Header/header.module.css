@@ -36,3 +36,57 @@
 .link:hover {
   text-decoration: underline;
 }
+
+p {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #000;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+/* Underline on hover */
+p::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    background: #3399cc;
+    transition: width 0.4s ease;
+}
+
+/* Glow + bounce effect */
+p:hover {
+    color: #3399cc;
+    transform: translateY(-3px);
+    text-shadow: 0 0 8px rgba(51, 153, 204, 0.4);
+}
+
+p:hover::after {
+    width: 100%;
+}
+
+/* Ripple flash + scale-down on click */
+p:active {
+    animation: textFlash 0.3s ease;
+    transform: scale(0.95);
+}
+
+@keyframes textFlash {
+    0% {
+        background-color: rgba(51, 153, 204, 0.1);
+    }
+    50% {
+        background-color: rgba(51, 153, 204, 0.3);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
