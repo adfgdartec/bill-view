@@ -35,17 +35,17 @@ export default function AboutUs() {
           <h1>It took four coders...</h1>
           <div className={styles.codersGrid}>
             <div className={styles.coderCard}>
-              <img className={styles.photo} src="old_car_and_me.jpeg" alt="Aarav Thilop" />
+              <img className={styles.photo} src="/images/old_car_and_me.jpeg" alt="Aarav Thilop" />
               <div>Aarav Thilop</div>
               <div>him</div>
             </div>
             <div className={styles.coderCard}>
-              <img className={styles.photo} src="youngadit_drawing.jpeg" alt="Adit Rajaram" />
+              <img className={styles.photo} src="/images/youngadit_drawing.jpeg" alt="Adit Rajaram" />
               <div>Adit Rajaram</div>
               <div>bruh</div>
             </div>
             <div className={styles.coderCard}>
-              <img className={styles.photo} src="arnav_arora_maga.jpeg" alt="Arnav Arora" />
+              <img className={styles.photo} src="/images/arnav_arora_maga.jpeg" alt="Arnav Arora" />
               <div>Arnav Arora</div>
               <div>far right conservative</div>
             </div>

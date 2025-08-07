@@ -1,0 +1,13 @@
+.container {
+    padding: 5px;
+}
+
+.tagSelected {
+    background-color: var(--tag-selection-bar-topic-selected-bg-color) !important;
+    color: var(--tag-selection-bar-topic-selected-text-color) !important;
+}
+
+.tagUnselected {
+    background-color: var(--tag-selection-bar-topic-unselected-bg-color) !important;
+    color: var(--tag-selection-bar-topic-unselected-text-color) !important;
+}

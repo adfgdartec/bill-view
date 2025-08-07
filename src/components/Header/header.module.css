@@ -37,7 +37,7 @@
   text-decoration: underline;
 }
 
-p {
+/* p {
     position: relative;
     display: inline-block;
     font-weight: bold;
@@ -47,10 +47,10 @@ p {
     cursor: pointer;
     text-decoration: none;
     overflow: hidden;
-}
+} */
 
 /* Underline on hover */
-p::after {
+/* p::after {
     content: '';
     position: absolute;
     width: 0%;
@@ -59,9 +59,9 @@ p::after {
     bottom: 0;
     background: #3399cc;
     transition: width 0.4s ease;
-}
+} */
 
-/* Glow + bounce effect */
+/* Glow + bounce effect
 p:hover {
     color: #3399cc;
     transform: translateY(-3px);
@@ -73,10 +73,10 @@ p:hover::after {
 }
 
 /* Ripple flash + scale-down on click */
-p:active {
+/* p:active {
     animation: textFlash 0.3s ease;
     transform: scale(0.95);
-}
+} */ 
 
 @keyframes textFlash {
     0% {

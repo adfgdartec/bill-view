@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 4vh;
+    bottom: 5vh;
+    left: 20vw;
+    right: 20vw;
+    
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+}
+
+.topContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.thanksText {
+    font-size: 20px;
+}
+
+.question {
+    font-size: 25px;
+}
+
+.actionButtons {
+    display: flex;
+    justify-content: space-between;
+    width: -webkit-fill-available;
+    padding: 20px;
+}
+
+.questionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: -webkit-fill-available;
+    margin-left: 5vw;
+}
