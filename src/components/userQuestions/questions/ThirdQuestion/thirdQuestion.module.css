@@ -1,0 +1,36 @@
+.optionsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: -webkit-fill-available;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    max-width: 600px;
+}
+
+.topicsText {
+    margin-bottom: 15px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: -webkit-fill-available;
+    margin-left: 2vw;
+    /* margin-top: 2vh; */
+    margin-right: 2vw;
+    margin-bottom: 3vh;
+}
+
+.text {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+}

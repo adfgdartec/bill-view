@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: -webkit-fill-avaliable;
+    height: -webkit-fill-avaliable;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    font-size: 20px;
+}
+
+.emoji {
+    font-size: 100px;
+    margin: 20px;
+    margin-top: 10px;
+}

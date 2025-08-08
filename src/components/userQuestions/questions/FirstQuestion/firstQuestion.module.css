@@ -1,18 +1,14 @@
-.optionsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    width: -webkit-fill-available;
-    margin-top: 3vh;
-    margin-bottom: 3vw;
-}
-
-.options {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-}
-
-.topicsText {
+.text {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     margin-bottom: 15px;
+}
+
+.formContainer {
+    width: 3wv;
+}
+
+.container {
+    margin: 20px;
 }

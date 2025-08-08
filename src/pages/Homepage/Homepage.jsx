@@ -12,42 +12,16 @@ import styles from './homepage.module.css';
 
 
 export default function Homepage() {
-    // The questions part, in editing
-    const userQuestions = [
-        {
-            id: 1,
-            question: "What topics are you interested in?",
-            options: [
-                { id: 1, label: "topic1" },
-                { id: 2, label: "topic2" },
-                { id: 3, label: "topic3" },
-                { id: 4, label: "topic with a long name" }
-            ]
-        },
-        {
-            id: 2,
-            question: "What subjects are you interested in?",
-            options: [
-                { id: 1, label: "subject1" },
-                { id: 2, label: "subject2" },
-                { id: 3, label: "subject3" },
-                { id: 4, label: "subject with a long name" }
-            ]
-        }
-    ];
-
+    // For the question to ask the user at first
     const [showUserSetup, setShowUserSetup] = useState(true);
-    const [selectedOptions, setSelectedOptions] = useState([]);
 
     return (
         <>
+            {/* Also needs to check for User Auth, don't want to ask same questions again */}
             {showUserSetup ?
                 <UserSetup
                     showUserSetup={showUserSetup}
                     setShowUserSetup={setShowUserSetup}
-                    userQuestions={userQuestions}
-                    selectedOptions={selectedOptions}
-                    setSelectedOptions={setSelectedOptions}
                 />
                 :
                 <div className={styles.container}>

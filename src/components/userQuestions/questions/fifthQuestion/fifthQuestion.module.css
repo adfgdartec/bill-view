@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 400px;
+}
+
+.summary {
+    margin: 20px;
+}
+
+.text {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.infoContainer {
+    display: flex;
+    gap: 8px;
+}
