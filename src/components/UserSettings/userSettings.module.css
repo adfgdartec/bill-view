@@ -1,17 +1,43 @@
 .container {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 60px);
+    justify-content: center;
+    align-items: center;
+}
+
+.settingsContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 20px;
+    background-color: var(--card-bg-color);
+    width: 60vw;
+    height: 80vh;
 }
 
 .containerSegment {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
+    width: 100%;
+    gap: 20px
 }
 
 .flex {
     display: flex;
     align-items: center;
     justify-content: start;
+}
+
+.titleText {
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+.avatar {
+    height: 100px !important;
+    width: 100px !important;
+    font-size: 50px !important;
+    margin: 10px;
 }
