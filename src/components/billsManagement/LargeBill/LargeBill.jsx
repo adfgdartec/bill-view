@@ -52,7 +52,7 @@ import styles from './largeBill.module.css';
 
 export default function LargeBill(props) {
     return (
-        <div className={styles.container} onClick={() => props.onClick()}>
+        <div className={styles.container}>
             <BillHeader
                 billName={props.billName}
                 view={props.view}
