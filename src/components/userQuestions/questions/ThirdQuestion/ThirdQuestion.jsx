@@ -19,7 +19,7 @@ export default function ThirdQuestion(props) {
             <p className={styles.text}>What topics are you interested in?</p>
             <div className={styles.optionsContainer}>
                 <p className={styles.topicsText}>Topics Selected</p>
-                <div className={styles.options}>
+                <div className={`${styles.options} ${styles.scrollable}`}>
                     {props.selectedTopics?.map(option => (
                         <OptionCard
                             key={option.id}
@@ -34,9 +34,9 @@ export default function ThirdQuestion(props) {
                 </div>
             </div>
 
-            <div className={styles.optionsContainer}>
+            <div className={styles.secondOptionsContainer}>
                 <p className={styles.topicsText}>All Topics</p>
-                <div className={styles.options}>
+                <div className={`${styles.options} ${styles.scrollable}`}>
                     {props.topics.map(option => (
                         <OptionCard
                             key={option.id}
