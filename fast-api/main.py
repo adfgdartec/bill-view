@@ -1,10 +1,20 @@
 from fastapi import FastAPI
 import httpx # or import requests
+import ollama
 
 app = FastAPI()
 limit = 250
 
-@app.get("/fetch-data-from-external-api/{page}")
+
+response = ollama.chat(
+        model='qwen3',  # Replace with the model you pulled
+        messages=[
+            {'role': 'user', 'content': input("prompt: ")},
+        ],
+    )
+print(response['message']['content'])
+
+@app.get("/fetch/{page}")
 async def fetch_data(page: str):
     external_api_url = "https://api.congress.gov/v3/bill/119?offset=" + page + "&limit=250&api_key=QtI83GenQb7n6jCofB5iHTYrGXzYnlDpwZ7ek4mc" # Example external API
 

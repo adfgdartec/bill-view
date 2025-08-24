@@ -1,0 +1,4 @@
+FROM llama0.9.0
+
+# low temp = more creative
+PARAMETER
