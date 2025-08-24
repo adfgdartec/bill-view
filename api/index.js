@@ -190,7 +190,7 @@ app.post("/api/users/register", async (req, res) => {
         // Add new user
         const userResult = await db.query(
             'INSERT INTO users (username, password) VALUES ($1, $2) RETURNING id',
-            [username, hashedPassowrd]
+            [username, hashedPassword]
         );
 
         const userId = userResult.rows[0].id;
