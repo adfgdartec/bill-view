@@ -22,7 +22,7 @@ function getPassword() {
 const db = new pg.Client({
     user: "postgres",
     password: getPassword(), //gets from password.txt
-    database: "BillView",
+    database: "bill-view-proto",
     port: "5432",
     host: "localhost"
 });
@@ -38,7 +38,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", async (req, res) => {
     try{
-    res.render("index.ejs", {stories: await db.query('SELECT * FROM stories ORDER BY id DESC LIMIT 10'), issue: await db.query('SELECT id FROM issues ORDER BY id DESC LIMIT 1')});
+    res.render("index.ejs", {bills: await db.query('SELECT * FROM bills ORDER BY id DESC LIMIT 10')});
     views++;
     } catch(err) {
         res.render("error/error503.ejs");
@@ -50,7 +50,7 @@ app.get("/bills/:id", async (req, res) => {
     try {
         const test = await db.query('SELECT * FROM stories WHERE id = $1', [req.params.id]);
         if( test.rows[0] !== undefined) {
-            res.render("story.ejs", {stories: await db.query('SELECT * FROM stories WHERE id = $1', [req.params.id])});
+            res.render("story.ejs", {stories: await db.query('SELECT * FROM bills WHERE id = $1', [req.params.id])});
         } else {
             throw (404);
         }
