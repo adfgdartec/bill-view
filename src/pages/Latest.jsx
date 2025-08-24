@@ -10,98 +10,39 @@ import Bill from "../components/billsManagement/Bill/Bill";
 
 export default function Latest() {
     // All tags shown to the user
-    const [tags, setTags] = useState([
-        {
-            id: 1,
-            selected: false,
-            label: "text"
-        },
-        {
-            id: 2,
-            selected: false,
-            label: "extended text"
-        },
-        {
-            id: 3,
-            selected: false,
-            label: "extended text"
-        },
-        {
-            id: 4,
-            selected: false,
-            label: "extended text"
-        }
-    ]);
+    const [tags, setTags] = useState([]);
 
     // TODO: Somehow include search bar as a filtering thing
     const [searchInput, setSearchInput] = useState('');
 
+    // Handles when the user enters enter in the search bar
     function handleKeyDown(event) {
         if (event.key === 'Enter') {
             console.log("User has pressed entered.");
         }
     }
 
-    const [bills, setBills] = useState([{
-        id: 1,
-        billName: "Clean Energy Advancement Act",
-        topic: "energy",
-        presenterInfo: {
-            name: "Senator Alicia Grant",
-            party: "Democratic Party",
-            presenterImg: "https://example.com/images/alicia-grant.jpg"
-        },
-        billStatistics: {
-            chanceOfPassing: 68,
-            otherStatistic: "35 Senators in support",
-            otherStatistic1: "Public approval: 72%"
-        },
-        summaries: {
-            medium: "This bill aims to increase federal investment in solar and wind energy infrastructure across the United States.",
-            large: "The Clean Energy Advancement Act proposes a 10-year, $200 billion investment into renewable energy projects, tax incentives for companies meeting clean energy benchmarks, and the creation of a federal advisory board on sustainable infrastructure. The bill targets a 40% reduction in national carbon emissions by 2035, while also providing job training programs for displaced fossil fuel workers."
-        },
-        topics: [
-            {
-                id: 1,
-                name: "Environment",
-                icon: "🌿"
-            },
-            {
-                id: 2,
-                name: "Energy",
-                icon: "⚡"
-            },
-            {
-                id: 3,
-                name: "Economy",
-                icon: "💰"
-            }
-        ],
-        news: [
-            {
-                id: 1,
-                title: "Clean Energy Bill Gains Momentum in Senate",
-                channelLogo: "https://example.com/logos/nbc-news.png",
-                content: "The Clean Energy Advancement Act, proposed by Sen. Alicia Grant, is gaining bipartisan traction as climate issues become a key focus in the upcoming elections.",
-                link: "https://example.com/news/clean-energy-bill-senate"
-            },
-            {
-                id: 2,
-                title: "Critics Say Energy Bill Overlooks Rural Communities",
-                channelLogo: "https://example.com/logos/fox-news.png",
-                content: "While the Clean Energy Bill promises progress, some lawmakers argue it doesn't address the infrastructure challenges faced by rural states.",
-                link: "https://example.com/news/energy-bill-rural-impact"
-            }
-        ]
-    }
-    ]);
+    // Variables containing bill data
+
+    // Contains all the pulled bills
+    const [bills, setBills] = useState([]);
+
+    // Contains a list of bills the user is tracking
     const [trackingBills, setTrackingBills] = useState([]);
+
+    // Contains the filtered bills (when the user chooses tags and uses the search bar)
     const [filteredBills, setFilteredBills] = useState([]);
+
+    // Filtered bills, but for bills the user is tracking list
     const [filteredTrackingBills, setFilteredTrackingBills] = useState([]);
+
+    // A list of dictionaries (tags) that have the selected property to true
+    // Changes everytime trackingTags changes
     const trackingTags = useMemo(
         () => tags.filter(tag => tag.selected),
         [tags]
     );
+
     // Update isTracked property when trackingBills changes
     useEffect(() => {
         const trackingBillsIds = trackingBills.map(bill => bill.id);
