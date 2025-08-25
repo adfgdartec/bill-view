@@ -35,7 +35,7 @@ export default function Bill(props) {
                             id={props.id}
                             addTrackingBills={props.addTrackingBills}
                             removeTrackingBills={props.removeTrackingBills}
-                            isTracked={props.bill.isTracked}
+                            isTracked={props.isTracked}
 
                             view={view}
                             setView={setView}
@@ -52,7 +52,7 @@ export default function Bill(props) {
                             id={props.id}
                             addTrackingBills={props.addTrackingBills}
                             removeTrackingBills={props.removeTrackingBills}
-                            isTracked={props.bill.isTracked}
+                            isTracked={props.isTracked}
 
                             view={view}
                             setView={setView}
@@ -70,7 +70,7 @@ export default function Bill(props) {
                             id={props.id}
                             addTrackingBills={props.addTrackingBills}
                             removeTrackingBills={props.removeTrackingBills}
-                            isTracked={props.bill.isTracked}
+                            isTracked={props.isTracked}
 
                             view={view}
                             setView={setView}

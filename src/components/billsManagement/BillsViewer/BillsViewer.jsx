@@ -14,7 +14,7 @@ export default function BillsViewer(props) {
                         bill={bill}
                         addTrackingBills={props.addTrackingBill}
                         removeTrackingBills={props.removeTrackingBill}
-                        isTracked={bill.isTracked}
+                        isTracked={props.trackingBillIds.includes(bill.id)}
                     />
                 )
             }
