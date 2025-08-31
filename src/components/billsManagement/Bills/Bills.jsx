@@ -5,17 +5,25 @@ import styles from './bills.module.css';
 import { useState, useEffect } from 'react';
 
 // Components
-import BillsViewer from '../../BillsViewer/BillsViewer';
+import BillsViewer from '../BillsViewer/BillsViewer';
 
 // Note: This files contains TODO to get data
 
 export default function Bills(props) {
     // Contains all the bills pulled
     // TODO: Give the user an option to pull more bill data (will figure out later)
-    // eslint-disable-next-line no-unused-vars
     const [bills, setBills] = useState([]);
 
+    if (props.type === "bills") {
+        // TODO: Pull all the bills from the database
+        setBills([])
+    } else if (props.type === "trackingBills") {
+        // TODO: Pull all the tracking bills from the database
+        setBills([])
+    }
+
     // All bill Ids and filtering data about the bills
+    // Filtering data consists of {billid: , topics: , subject: }
     const [allBillsFilterData, setAllBillsFilterData] = useState([]);
 
     useEffect(() => {
@@ -27,7 +35,7 @@ export default function Bills(props) {
         setAllBillsFilterData(getAllBillsFilterData(bills));
     }, [bills]);
 
-    // Contains the ids and data of what bills to display
+    // Contains the ids of what bills to display
     const [displayBillIds, setDisplayBillIds] = useState([]);
 
     // Filtering the bills based on the user tags selected
@@ -42,7 +50,7 @@ export default function Bills(props) {
 
     // Handles the Tracking Bill Functionality
     // TODO: Get the current TrackingBillIds from the DB
-    const [trackingBillIds, setTrackingBillIds] = useState([]);
+    const [trackingBillIds, setTrackingBillIds] = useState();
 
     // Handles when user clicks on the bookmark
     function addTrackingBill(event) {

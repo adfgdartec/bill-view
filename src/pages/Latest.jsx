@@ -7,8 +7,7 @@ import FilteringTags from "../components/FilteringTags/FilteringTags";
 import Header from "../components/Header/Header";
 import BillsViewer from "../components/billsManagement/BillsViewer/BillsViewer";
 import Bill from "../components/billsManagement/Bill/Bill";
-import TrackingBills from "../components/billsManagement/dataFetching/TrackingBills/TrackingBills";
-import Bills from "../components/billsManagement/dataFetching/Bills/Bills";
+import Bills from "../components/billsManagement/Bills/Bills";
 
 export default function Latest() {
     // Handling all the Bill Filtering
@@ -67,11 +66,8 @@ export default function Latest() {
 
             <Bills
                 tagsSelected={trackingTags}
+                type="bills"
             />
-            {/* TODO: Need to Fix */}
-            {/* <TrackingBills
-                selectTags={trackingTags}
-            /> */}
         </div>
     );
 }
