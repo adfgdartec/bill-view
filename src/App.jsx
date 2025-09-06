@@ -16,6 +16,7 @@ import AboutUs from './pages/AboutUs/AboutUs.jsx';
 // Style Imports
 import './styles/App.css';
 import './styles/themes.css';
+import './styles/fonts.css';
 
 function App() {
   return (

@@ -4,12 +4,21 @@ import Navigator from "../Navigator";
 import Avatar from '@mui/material/Avatar';
 import ActionButton from "../ActionButton/ActionButton";
 
+// Other Imports
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
+
 // Stylesheet
 import styles from './header.module.css';
 
 export default function Header(props) {
     return (
-        <div className={styles.header}>
+        <motion.div 
+            initial={{ opacity: 0 }} // start transparent + red
+            animate={{ opacity: 1 }} // fade in + change to blue
+            transition={{ duration: 2.5 }} // loop
+            className={styles.header}
+        >
             <div className={styles.leftGroup}>
                 <Logo userAuth={props.userAuth} shortLogo={true} link={true}/>
                 
@@ -47,6 +56,6 @@ export default function Header(props) {
                         </>
                 }
             </div>
-        </div>
+        </motion.div>
     );
 }

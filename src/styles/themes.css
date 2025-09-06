@@ -43,6 +43,8 @@
   /* Homepage Colors */
   --latest-bills-bg-color: #F2F7FF;
   --tracking-bills-bg-color: #F2F7FF;
+  --main-text-important-color: linear-gradient(#00ACFF, #007ab7);
+  --main-text-color: #000000;
 }
 
 [data-theme="dark"] {
