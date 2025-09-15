@@ -15,7 +15,7 @@ export default function FloatingPapers({ count = 12 }) {
         const rot = -20 + Math.random() * 40;              // deg
         const sway = -80 + Math.random() * 160;            // px
         const duration = 12 + Math.random() * 18;          // sec
-        const delay = Math.random() * 8;                   // sec
+        const delay = 0; // Math.random() * 8                   // sec
         const opacity = 0.55 + Math.random() * 0.45;       // 0.55 - 1
         arr.push({
         id: i,

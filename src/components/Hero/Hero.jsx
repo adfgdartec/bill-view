@@ -60,18 +60,6 @@ export default function Hero() {
                     </div>
                 </div>
             </motion.div>
-            {/* Features section planning to add in the future */}
-            {/* <motion.div
-                className={styles.features}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, ease: "easeOut" }}
-                viewport={{ once: true, amount: 0.2 }} 
-            >
-                <p className={styles.text}>
-                    Bill-Viewing Centered for Teens
-                </p>
-            </motion.div> */}
         </div>
     );
 }

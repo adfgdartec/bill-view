@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100vw;
+    height: fit-content;
+}
+
+.featureTextContainer {
+    margin: 75px 20px 20px 0px;
+    width: 40%;
+}
+
+.featureText {
+    font-family: EpundaSlab;
+    font-size: 60px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.featureInformationContainer {
+    width: 50%;
+    margin-top: 75px;
+    margin-bottom: 150px;
+}
+
+.featureInformationText {
+    font-family: EpundaSlab;
+    font-size: 25px;
+    font-weight: 300;
+    text-align: center;
+}
