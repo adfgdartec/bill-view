@@ -14,13 +14,15 @@ export default function Bills(props) {
     // TODO: Give the user an option to pull more bill data (will figure out later)
     const [bills, setBills] = useState([]);
 
-    if (props.type === "bills") {
-        // TODO: Pull all the bills from the database
-        setBills([])
-    } else if (props.type === "trackingBills") {
-        // TODO: Pull all the tracking bills from the database
-        setBills([])
-    }
+    useEffect(() => {
+        if (props.type === "bills") {
+            // TODO: Pull all the bills from the database
+            setBills([])
+        } else if (props.type === "trackingBills") {
+            // TODO: Pull all the tracking bills from the database
+            setBills([])
+        }
+    }, [props.type]);
 
     // All bill Ids and filtering data about the bills
     // Filtering data consists of {billid: , topics: , subject: }

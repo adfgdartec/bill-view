@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap');
 
 body {
     font-family: 'IBM Plex Sans', sans-serif;
@@ -22,10 +22,10 @@ body {
   background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-}
+} */
 
 /* Mobile responsiveness */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .container {
     padding: 24px 20px;
   }
@@ -213,16 +213,16 @@ body {
     color: #555;
     font-size: 0.95rem;
     display: block;
-}
+} */
 
 /* Strike-through label when checked */
-.checkItem.checked .checkLabel {
+/* .checkItem.checked .checkLabel {
     text-decoration: line-through;
     color: #3399cc;
-}
+} */
 
 /* Responsive stacking for small screens */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .checklist {
         grid-template-columns: 1fr;
     }
@@ -231,4 +231,11 @@ body {
         font-size: 1rem;
         padding: 16px;
     }
+} */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }

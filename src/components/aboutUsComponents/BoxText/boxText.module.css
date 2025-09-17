@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+
+    width: 80%;
+    min-height: 75px;
+    background-color: var(--box-bg-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text {
+    font-family: EpundaSlab;
+    color: var(--text-color);
+    font-size: 40px;
+}

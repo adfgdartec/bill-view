@@ -7,25 +7,41 @@ import styles from './aboutUs.module.css';
 // Components
 import Header from "../../components/Header/Header";
 import Logo from "../../components/Logo/Logo";
+import BoxText from "../../components/aboutUsComponents/BoxText/BoxText";
+import CoderCard from "../../components/aboutUsComponents/CoderCard/CoderCard";
 
 export default function AboutUs() {
-  const [checkedItems, setCheckedItems] = useState({
-    interface: false,
-    filtering: false,
-    ai: false,
-    politics: false
-  });
+  // const [checkedItems, setCheckedItems] = useState({
+  //   interface: false,
+  //   filtering: false,
+  //   ai: false,
+  //   politics: false
+  // });
 
-  const toggleItem = (key) => {
-    setCheckedItems(prev => ({
-      ...prev,
-      [key]: !prev[key]
-    }));
-  };
+  // const toggleItem = (key) => {
+  //   setCheckedItems(prev => ({
+  //     ...prev,
+  //     [key]: !prev[key]
+  //   }));
+  // };
 
   return (
     <>
-      <div>
+      <Header userAuth={false} />
+      <div className={styles.container}>
+        <BoxText text="It took four coders."/>
+        <CoderCard
+          coderImg="/images/old_car_and_me.jpeg"
+          coderName="Aarav Thilop"
+          coderDetails="He was a frontend coder."
+        />
+      </div>
+    </>
+  );
+}
+
+
+{/* <div>
         <Header userAuth={false} />
         <p>You are in the About Us page.</p>
       </div>
@@ -99,6 +115,4 @@ export default function AboutUs() {
 
         </div>
       </div>
-    </>
-  );
-}
+    </> */}

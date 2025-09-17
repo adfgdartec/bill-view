@@ -10,8 +10,8 @@ export default function LandingPage() {
             <Header userAuth={false}/>
             <Hero />
             {/* Features section planning to add in the future */}
-            <ListFeature />
             <CenterFocusFeature />
+            <ListFeature />
             {/* Footer */}
             <Footer />
         </div>

@@ -7,7 +7,7 @@ export default function Settings() {
         <div>
             <Header userAuth={true} />
             {/* <p>You are in the settings page.</p> */}
-            <div >
+            <div>
                 <UserSettings />
             </div>
         </div>
