@@ -1,0 +1,7 @@
+fastapi 
+httpx
+ollama
+duckduckgo_search 
+psycopg2
+asyncio 
+json
