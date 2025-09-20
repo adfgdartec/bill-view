@@ -1,5 +1,5 @@
 // React Imports
-import { useState } from "react";
+// import { useState } from "react";
 
 // Stylesheet
 import styles from './aboutUs.module.css';
@@ -9,6 +9,7 @@ import Header from "../../components/Header/Header";
 import Logo from "../../components/Logo/Logo";
 import BoxText from "../../components/aboutUsComponents/BoxText/BoxText";
 import CoderCard from "../../components/aboutUsComponents/CoderCard/CoderCard";
+import BasicCard from "../../components/featurePages/BasicCard/BasicCard";
 
 export default function AboutUs() {
   // const [checkedItems, setCheckedItems] = useState({
@@ -25,16 +26,58 @@ export default function AboutUs() {
   //   }));
   // };
 
+  const CodersInfo = [
+    {
+      coderImg: "",
+      coderName: "",
+      coderDetails: ""
+    }
+  ]
+
   return (
     <>
       <Header userAuth={false} />
       <div className={styles.container}>
         <BoxText text="It took four coders."/>
-        <CoderCard
-          coderImg="/images/old_car_and_me.jpeg"
-          coderName="Aarav Thilop"
-          coderDetails="He was a frontend coder."
-        />
+        <div className={styles.coderCardsContainer}>
+          <CoderCard
+            coderImg="/images/old_car_and_me.jpeg"
+            coderName="Aarav Thilop"
+            coderDetails="He was a frontend coder."
+          />
+          <CoderCard
+            coderImg="/images/old_car_and_me.jpeg"
+            coderName="Aarav Thilop"
+            coderDetails="He was a frontend coder."
+          />
+          <CoderCard
+            coderImg="/images/old_car_and_me.jpeg"
+            coderName="Aarav Thilop"
+            coderDetails="He was a frontend coder."
+          />
+          <CoderCard
+            coderImg="/images/old_car_and_me.jpeg"
+            coderName="Aarav Thilop"
+            coderDetails="He was a frontend coder."
+          />
+        </div>
+        <div className={styles.coderCardsContainer}>
+          
+        </div>
+        <BoxText text="An Idea, And A Lot of Hours of Coding! To Create..." />
+        <div className={styles.logoContainer}>
+          <div className={styles.featuresContainer}>
+            <BasicCard />
+            <BasicCard />
+            <BasicCard />
+          </div>
+          <Logo className={styles.logo}/>
+          <div className={styles.featuresContainer}>
+            <BasicCard />
+            <BasicCard />
+            <BasicCard />
+          </div>
+        </div>
       </div>
     </>
   );

@@ -44,8 +44,8 @@ export default function Logo(props) {
                 </div>
             :
                 <div className={`${styles.logo} ${props.className}`}>
-                    <p className={styles.bill}>Bill</p>
-                    <p className={styles.view}>View</p>
+                    <p className={`${styles.bill} ${props.className}`}>Bill</p>
+                    <p className={`${styles.view} ${props.className}`}>View</p>
                 </div>
         );
     }
