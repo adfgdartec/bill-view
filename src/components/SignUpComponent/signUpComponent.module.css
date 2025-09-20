@@ -19,7 +19,7 @@
 
 .actionButton {
     width: 300px;
-    margin-bottom: 20px !important;
+    /* margin-bottom: 20px !important; */
 }
 
 .loginHere {
@@ -31,5 +31,5 @@
 }
 
 .logo {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }

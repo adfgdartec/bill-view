@@ -71,7 +71,7 @@ export default function AboutUs() {
             <BasicCard />
             <BasicCard />
           </div>
-          <Logo className={styles.logo}/>
+          <Logo classNameText={styles.logo}/>
           <div className={styles.featuresContainer}>
             <BasicCard />
             <BasicCard />
