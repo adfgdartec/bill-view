@@ -61,8 +61,8 @@ async def fetch_data(page: str):
         return {"status": "error", "message": f"An error occurred while requesting: {e}"}
 data = run(fetch_data(0))
 
-for i
-print(json.dumps(data, indent=4))
-print(data["bills"][0]["congress"])
-cursor.execute("INSERT INTO test (title, congress, bill_number) VALUES (%s, %s, %s)", (data["bills"][0]["title"],  data["bills"][0]["congress"], data["bills"][0]["number"]))
-db.commit()
+for i in range(0, limit):
+    print(json.dumps(data, indent=4))
+    print(data["bills"][i]["congress"])
+    cursor.execute("INSERT INTO test (title, congress, bill_number) VALUES (%s, %s, %s)", (data["bills"][i]["title"],  data["bills"][i]["congress"], data["bills"][i]["number"]))
+    db.commit()
