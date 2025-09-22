@@ -1,0 +1,12 @@
+1. Simple explanations
+    No unnecessary jargon, fluff, and legistative talk; only simple and direct information.
+2. Real-time bill sourcing
+    The bill information comes directly from congress, live, so you don't have to worry about misinterpretation and obsoleteness.
+3. Information checks
+    Everything is fact-checked by a neutral AI, meaning that there will be very little bias in the information you receive.
+4. Summarization
+    We use novel artificial intelligence technologies and models in order to concisely summarize information that the user needs.
+5. Universality
+    Unlike other bill information sources, we tailor the content to the needs of the user, and what they want to learn about.
+6. Inclusion of AI
+    Top of the line artificial intelligence is injected throughout the application, optimizing nearly every aspect of it, in order to benefit the user in many ways
