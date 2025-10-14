@@ -8,7 +8,9 @@ import styles from './billHeader.module.css';
 export default function BillHeader(props) {
     return (
         <div className={styles.container}>
-            <p className={styles.name}>{props.billName}</p>
+            {props.view == "small" && <p className={styles.name}>{props.billName.length < 25 ? props.billName : props.billName.slice(0, 26) + "..."}</p>}
+            {props.view == "medium" && <p className={styles.name}>{props.billName.length < 50 ? props.billName : props.billName.slice(0, 51) + "..."}</p>}
+            {props.view == "large" && <p className={styles.name}>{props.billName.length < 200 ? props.billName : props.billName.slice(0, 201) + "..."}</p>}
             <div className={styles.icons}>
                 <div
                     id={props.id}

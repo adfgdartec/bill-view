@@ -8,7 +8,10 @@ import { motion } from 'framer-motion';
 // Components
 import BasicCard from '../BasicCard/BasicCard';
 
-export default function ListFeature() {
+// heading
+// features list
+
+export default function ListFeature(props) {
     return (
         <motion.div
             className={styles.container}
@@ -17,7 +20,7 @@ export default function ListFeature() {
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.2 }}
         >
-            <p className={styles.featureText}>This is our List of Features! Behold this Text!</p>
+            <p className={styles.featureText}>{props.heading}</p>
             <motion.div
                 className={styles.cardsContainer}
                 initial={{opacity: 0, y: 25 }}
@@ -25,9 +28,12 @@ export default function ListFeature() {
                 transition={{duration: 1, ease: "easeOut"}}
                 viewport={{once: true, amount: 0.2}}
             >
-                <BasicCard />
-                <BasicCard />
-                <BasicCard />
+                {props.featuresList.map(feature =>
+                    <BasicCard
+                        heading={feature.heading}
+                        body={feature.body}
+                    />
+                )}
             </motion.div>
         </motion.div>
     );

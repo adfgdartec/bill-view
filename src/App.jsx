@@ -1,6 +1,6 @@
 // React Imports
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+// import { useEffect } from 'react';
 // import { AuthProvider } from './hooks/useAuth.jsx';
 
 // Pages Imports
@@ -19,66 +19,69 @@ import './styles/themes.css';
 import './styles/fonts.css';
 
 function App() {
-  return (
-    <BrowserRouter>
-        <Routes>
-            <Route
-                path="/"
-                element={
-                    <LandingPage />
-                }
-            />
+    // useEffect(() => {
+    // document.documentElement.setAttribute('data-theme', 'dark');
+    // }, []);
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        <LandingPage />
+                    }
+                />
 
-            <Route
-                path="/homepage"
-                element={
-                    <Homepage />
-                }
-            />
+                <Route
+                    path="/homepage"
+                    element={
+                        <Homepage />
+                    }
+                />
 
-            <Route
-                path="/about-us"
-                element={
-                    <AboutUs />
-                }
-            />
+                <Route
+                    path="/about-us"
+                    element={
+                        <AboutUs />
+                    }
+                />
 
-            <Route
-                path="/latest"
-                element={
-                    <Latest />
-                }
-            />
+                <Route
+                    path="/latest"
+                    element={
+                        <Latest />
+                    }
+                />
 
-            <Route
-                path="/settings"
-                element={
-                    <Settings />
-                }
-            />
+                <Route
+                    path="/settings"
+                    element={
+                        <Settings />
+                    }
+                />
 
-            <Route
-                path="/tracking"
-                element={
-                    <Tracking />
-                }
-            />
+                <Route
+                    path="/tracking"
+                    element={
+                        <Tracking />
+                    }
+                />
 
-            <Route
-                path="/sign-up"
-                element={
-                    <SignUp />
-                }
-            />
+                <Route
+                    path="/sign-up"
+                    element={
+                        <SignUp />
+                    }
+                />
 
-            <Route
-                path="/login"
-                element={
-                    <Login />
-                }
-            />
-        </Routes>
-    </BrowserRouter>
+                <Route
+                    path="/login"
+                    element={
+                        <Login />
+                    }
+                />
+            </Routes>
+        </BrowserRouter>
   );
 }
 
