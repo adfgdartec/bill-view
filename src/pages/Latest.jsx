@@ -17,10 +17,12 @@ export default function Latest() {
     // TODO: Somehow include search bar as a filtering thing
     const [searchInput, setSearchInput] = useState('');
 
+    const [enterInput, setEnterInput] = useState('');
+
     // Handles when the user enters enter in the search bar
     function handleKeyDown(event) {
         if (event.key === 'Enter') {
-            console.log("User has pressed entered.");
+            setEnterInput(searchInput);
         }
     }
 

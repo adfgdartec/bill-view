@@ -71,21 +71,21 @@ export default function Bills(props) {
     }, [props.tagsSelected, allBillsFilterData]);
 
     // Handles the Search Bar Inputs
-    // useEffect(() => {
-    //     const search = typeof props.searchInput === 'string' ? props.searchInput.trim().toLowerCase() : '';
-    //     if (!search) {
-    //         // if search cleared, restore from bills
-    //         setAllBillsFilterData(bills.map(bill => ({ id: bill.id, billName: bill.billName, topics: (bill.topics || []).map(t => t.name), subject: bill.subject })));
-    //         return;
-    //     }
-    //     setAllBillsFilterData(() => {
-    //         // derive from the latest bills array to ensure topics exist
-    //         const source = bills || [];
-    //         return source
-    //             .filter(bill => (bill.billName || '').toLowerCase().includes(search))
-    //             .map(bill => ({ id: bill.id, billName: bill.billName, topics: (bill.topics || []).map(t => t.name), subject: bill.subject }));
-    //     });
-    // }, [props.searchInput, bills]);
+    useEffect(() => {
+        const search = typeof props.searchInput === 'string' ? props.searchInput.trim().toLowerCase() : '';
+        if (!search) {
+            // if search cleared, restore from bills
+            setAllBillsFilterData(bills.map(bill => ({ id: bill.id, billName: bill.billName, topics: (bill.topics || []).map(t => t.name), subject: bill.subject })));
+            return;
+        }
+        setAllBillsFilterData(() => {
+            // derive from the latest bills array to ensure topics exist
+            const source = bills || [];
+            return source
+                .filter(bill => (bill.billName || '').toLowerCase().includes(search))
+                .map(bill => ({ id: bill.id, billName: bill.billName, topics: (bill.topics || []).map(t => t.name), subject: bill.subject }));
+        });
+    }, [props.searchInput, bills]);
 
     // Handles the Tracking Bill Functionality
     // TODO: Get the current TrackingBillIds from the DB

@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     gap: 32px;
-    padding: 2px;
     background-color: var(--tag-selection-bar-bg-color);
 }
 
@@ -20,21 +19,28 @@
     overflow-x: auto;       /* enable horizontal scroll when needed */
     
     width: 80vw;      /* max container width */
+    height: 20px;
     gap: 16px;
+
+    /* padding-inline-start: 16px; */
 }
 
 .tags {
     scrollbar-width: thin;
     scrollbar-color: rgba(100,100,100,0.5) transparent; /* for Firefox */
     /* padding-bottom: 4px; helps with scrollbar visibility */
+    /* padding-bottom: 8;
+    margin-top: 13; */
+    padding: 2px;
+    height: fit-content;
 }
 
 .tags::-webkit-scrollbar {
-    height: 6px;
+    height: 3px;
 }
 
 .tags::-webkit-scrollbar-thumb {
-    background: rgba(100,100,100,0.5);
+    background: rgba(100,100,100,0.3);
     border-radius: 4px;
 }
 
