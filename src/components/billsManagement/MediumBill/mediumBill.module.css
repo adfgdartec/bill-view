@@ -4,6 +4,8 @@
     padding: 20px;
     background-color: var(--card-bg-color);
     border-radius: 12px;
+
+    box-shadow: -1px 1px rgb(0 0 0 / 0.1);
 }
 
 .infoContainer {

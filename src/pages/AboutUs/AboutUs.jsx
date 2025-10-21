@@ -4,6 +4,10 @@
 // Stylesheet
 import styles from './aboutUs.module.css';
 
+// Other Imports
+// eslint-disable-next-line no-unused-vars
+import { motion } from 'framer-motion';
+
 // Components
 import Header from "../../components/Header/Header";
 import Logo from "../../components/Logo/Logo";
@@ -67,15 +71,33 @@ export default function AboutUs() {
         <BoxText text="An Idea, And A Lot of Hours of Coding! To Create..." />
         <div className={styles.logoContainer}>
           <div className={styles.featuresContainer}>
-            <BasicCard />
-            <BasicCard />
-            <BasicCard />
+            <BasicCard
+              heading="Simple explanations"
+              body="No unnecessary jargon, fluff, and legistative talk; only simple and direct information."
+            />
+            <BasicCard
+              heading="Real-time bill sourcing"
+              body="The bill information comes directly from congress, live, so you don't have to worry about misinterpretation and obsoleteness."
+            />
+            <BasicCard
+              heading="Information checks"
+              body="Everything is fact-checked by a neutral AI, meaning that there will be very little bias in the information you receive."
+            />
           </div>
           <Logo classNameText={styles.logo}/>
           <div className={styles.featuresContainer}>
-            <BasicCard />
-            <BasicCard />
-            <BasicCard />
+            <BasicCard
+              heading="Summarization"
+              body="We use novel artificial intelligence technologies and models in order to concisely summarize information that the user needs."
+            />
+            <BasicCard
+              heading="Universality"
+              body="Unlike other bill information sources, we tailor the content to the needs of the user, and what they want to learn about."
+            />
+            <BasicCard
+              heading="Inclusion of AI"
+              body="Top of the line artificial intelligence is injected throughout the application, optimizing nearly every aspect of it, in order to benefit the user in many ways."
+            />
           </div>
         </div>
       </div>

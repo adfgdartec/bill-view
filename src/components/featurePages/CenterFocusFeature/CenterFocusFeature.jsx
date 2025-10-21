@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 // Other Components
 
-export default function CenterFocusFeature() {
+export default function CenterFocusFeature(props) {
     return (
         <motion.div
             className={styles.container}
@@ -17,7 +17,7 @@ export default function CenterFocusFeature() {
             viewport={{ once: true, amount: 0.2 }}
         >
             <div className={styles.featureTextContainer}>
-                <p className={styles.featureText}>This is our main feature! Thanks for Reading!</p>
+                <p className={styles.featureText}>{props.heading}</p>
             </div>
             
             <motion.div
@@ -27,7 +27,7 @@ export default function CenterFocusFeature() {
                 transition={{duration: 1, ease: "easeOut"}}
                 viewport={{once: true, amount: 0.2}}
             >
-                <p className={styles.featureInformationText}>Here we go deeper into our feature. Please continue to read until the end. Here we could talk more about this feature, maybe how it was created? Again, thank you for reading!</p>
+                <p className={styles.featureInformationText}>{props.body}</p>
             </motion.div>
         </motion.div>
     );

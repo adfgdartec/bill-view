@@ -6,10 +6,11 @@ import Typography from "@mui/material/Typography";
 // import CardActions from "@mui/material/CardActions";
 // import Button from "@mui/material/Button";
 
-export default function BasicCard() {
+export default function BasicCard(props) {
   return (
     <Card
         sx={{ maxWidth: 345, backgroundColor: "var(----card-bg-color)" }}
+        className={props.className}
     >
       {/* <CardMedia
         component="img"
@@ -19,10 +20,10 @@ export default function BasicCard() {
       /> */}
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Feature
+          {props.heading}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          More details about this feature. Text to fill the space. More details about this feature. Text to fill the space. More details about this feature. Text to fill the space. More details about this feature. Text to fill the space.
+          {props.body}
         </Typography>
       </CardContent>
       {/* <CardActions>

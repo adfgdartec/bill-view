@@ -1,9 +1,10 @@
 // Other Imports
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
+import { useMediaQuery } from 'react-responsive';
 
 // Components
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SmallBill from '../SmallBill/SmallBill';
 import MediumBill from '../MediumBill/MediumBill';
 import LargeBill from '../LargeBill/LargeBill';
@@ -13,8 +14,18 @@ import styles from './bill.module.css';
 
 
 export default function Bill(props) {
-    const [view, setView] = useState("small");
-    
+    const [view, setView] = useState("");
+    const isDesktop = useMediaQuery({ minWidth: 992 });
+    const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 });
+    const isMobile = useMediaQuery({ maxWidth: 767 });
+    useEffect(() => {
+        if (isDesktop) {
+            setView("medium")
+        } else {
+            setView("small")
+        }
+    }, [isTablet, isMobile, isDesktop]);
+
     return (
         <motion.div
             layout

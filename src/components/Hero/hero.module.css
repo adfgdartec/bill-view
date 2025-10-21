@@ -58,6 +58,7 @@
 
   margin-top: 5rem;
   margin-left: 15%;
+  z-index: 20;
 }
 
 .importantText {
@@ -68,14 +69,7 @@
 
 .animatedGradient {
   font-weight: bold;
-  background: linear-gradient(
-    270deg,
-    #00c6ff,  /* bright cyan */
-    #1880ff,  /* vibrant blue */
-    #00c1a7,  /* aqua/teal */
-    #009ffd,  /* sky blue */
-    #00c6ff   /* loop back to cyan */
-  );
+  background: var(--main-text-important-color);
   background-size: 400% 400%; /* bigger than element for smooth movement */
   background-clip: text;
   -webkit-background-clip: text;

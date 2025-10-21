@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 import httpx # or import requests
 from ollama import chat
+import duckduckgo_search
 import psycopg2
 from asyncio import run
 import json
@@ -16,10 +17,10 @@ import re
 
 
 
-db = psycopg2.connect(database="bill-view-test",
+db = psycopg2.connect(database="BillView",
                         host="localhost",
                         user="postgres",
-                        password="52215",
+                        password="Reddy123!",
                         port="5432")
 
 cursor = db.cursor()
