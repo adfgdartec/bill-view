@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 import httpx # or import requests
 from ollama import chat
-import duckduckgo_search
 import psycopg2
 from asyncio import run
 import json
@@ -10,14 +9,14 @@ import requests
 from bs4 import BeautifulSoup
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain_community.vectorstores import Chroma
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.schema import Document
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_core.documents import Document
 import re
 
 
 
-
-db = psycopg2.connect(database="BillView",
+#db setup
+db = psycopg2.connect(database="bill-view-test",
                         host="localhost",
                         user="postgres",
                         password="Reddy123!",
@@ -319,15 +318,6 @@ def analyze_bill(bill_text: str):
     result = call_ollama(bill_text, docs)
     return result
 
-if _name_ == "_main_":
-    import sys
-    if len(sys.argv) != 2:
-        print("Usage: python bill_full_analyzer.py <bill_text_file>")
-        sys.exit(1)
-    bill = open(sys.argv[1]).read()
-    res = analyze_bill(bill)
-    print(json.dumps(res, indent=2))
-
 # response: ollama.ChatResponse = ollama.chat(
 #         model='llama3.2',  # Replace with the model you pulled
 #         messages=[
@@ -344,6 +334,8 @@ if _name_ == "_main_":
 #     print(chunk.message.tool_calls)
 limit = 25
 # 5744
+
+#insert db
 async def fetch_data(page: str, endpoint = "", type="hr/"):
     external_api_url = "https://api.congress.gov/v3/bill/119/" + type + endpoint + "?offset=" + str(page) + "&limit="+ str(limit) + "&api_key=QtI83GenQb7n6jCofB5iHTYrGXzYnlDpwZ7ek4mc" # Example external API
 
@@ -375,14 +367,14 @@ for i in range(0, limit):
         text_html = r.text
 
     summary = run(fetch_data(0, number + "/summaries"))
-    subject = run(fetch_data(0, number + "/subjects"))["subjects"]#["policyArea"]["name"]
+    subject = run(fetch_data(0, number + "/subjects"))["subjects"]["legislativeSubjects"]
     # print(text)
     print(subject)
     # print(json.dumps(data, indent=4))
     # print(data["bills"][i]["congress"])
     # print(summary["summaries"])
     # print(summary["summaries"][0]["text"] if len(summary["summaries"]) > 0 else "null" )
-    cursor.execute("INSERT INTO test (title, congress, bill_number, summary, text, subject) VALUES (%s, %s, %s, %s, %s, %s)", (data["bills"][i]["title"],  data["bills"][i]["congress"], data["bills"][i]["number"], summary["summaries"][0]["text"] if len(summary["summaries"]) > 0 else "null", text_html, subject))
+    cursor.execute("INSERT INTO test (title, congress, bill_number, summary, text, subjects) VALUES (%s, %s, %s, %s, %s, %s)", (data["bills"][i]["title"],  data["bills"][i]["congress"], data["bills"][i]["number"], summary["summaries"][0]["text"] if len(summary["summaries"]) > 0 else "null", text_html, str(subject)))
     db.commit()
 
 

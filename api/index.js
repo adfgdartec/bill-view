@@ -48,7 +48,7 @@ app.get("/", async (req, res) => {
 
 app.get("/bills/:id", async (req, res) => {
     try {
-        const test = await db.query('SELECT * FROM stories WHERE id = $1', [req.params.id]);
+        const test = await db.query('SELECT * FROM bills WHERE id = $1', [req.params.id]);
         if( test.rows[0] !== undefined) {
             res.render("story.ejs", {stories: await db.query('SELECT * FROM bills WHERE id = $1', [req.params.id])});
         } else {
@@ -70,6 +70,7 @@ app.get("/api/bills", async (req, res) => {
             FROM bills b
             LEFT JOIN bills_expanded be on b.id = be.id
         `;
+        
         let params = [];
         let conditions = [];
 
