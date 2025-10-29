@@ -6,6 +6,9 @@
 
     width: 100vw;
     height: fit-content;
+    
+    background-color: var(--feature-page-bg-color);
+    color: var(--feature-page-text-color);
 }
 
 .featureTextContainer {

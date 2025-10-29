@@ -1,16 +1,18 @@
+// Stylesheet
+import styles from './basicCard.module.css';
+
 // Components
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-// import CardActions from "@mui/material/CardActions";
-// import Button from "@mui/material/Button";
+
 
 export default function BasicCard(props) {
   return (
     <Card
-        sx={{ maxWidth: 345, backgroundColor: "var(----card-bg-color)" }}
-        className={props.className}
+        sx={{ maxWidth: 345 }}
+        className={styles.basicCard}
     >
       {/* <CardMedia
         component="img"
@@ -22,7 +24,7 @@ export default function BasicCard(props) {
         <Typography gutterBottom variant="h5" component="div">
           {props.heading}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body1">
           {props.body}
         </Typography>
       </CardContent>

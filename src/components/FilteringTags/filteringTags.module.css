@@ -53,3 +53,18 @@
     background-color: var(--tag-selection-bar-topic-unselected-bg-color) !important;
     color: var(--tag-selection-bar-topic-unselected-text-color) !important;
 }
+
+.showAllTags {
+    /* When `.showAllTags` is present on the same element as `.tags`,
+       allow chips to wrap to new lines instead of forcing horizontal scroll.
+       Also provide a vertical scrollbar when content overflows the max height. */
+    display: flex;            /* keep flex behaviour */
+    flex-wrap: wrap;         /* wrap items to new rows */
+    align-items: flex-start; /* align rows from the top */
+    overflow-x: hidden;      /* disable horizontal scrolling */
+    overflow-y: auto;        /* enable vertical scrolling when needed */
+    width: 100%;
+    max-height: 40vh;        /* limit vertical growth, adjust as desired */
+    padding-bottom: 8px;     /* breathing room for scrollbar */
+    scrollbar-gutter: stable;/* reserve space for scrollbar to avoid layout shift */
+}

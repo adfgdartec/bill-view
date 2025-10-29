@@ -7,7 +7,7 @@ import Footer from '../components/Footer/Footer';
 export default function LandingPage() {
     return (
         <div>
-            <Header userAuth={false}/>
+            <Header userAuth={false} fade={true}/>
             <Hero />
             {/* Features section planning to add in the future */}
             {/* // heading
@@ -16,8 +16,12 @@ export default function LandingPage() {
                 heading={"Simple explanations"}
                 body={"No unnecessary jargon, fluff, and legistative talk; only simple and direct information."}
             />
+            <CenterFocusFeature
+                heading={"Have Easy Access"}
+                body={"You don't have to make an account to view the bills. Just click on the latest bills tab."}
+            />
             <ListFeature
-                heading={"We value CLARITY"}
+                heading={"We make Accuracy our Highest Priority"}
                 featuresList={FEATURES_INFO}
             />
             {/* Footer */}

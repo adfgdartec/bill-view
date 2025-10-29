@@ -3,6 +3,7 @@
   height: calc(100vh - 60px);
   width: 100%;
   overflow: hidden;
+  background-color: var(--landing-page-bg-color);
 }
 
 .heroContent {
@@ -54,7 +55,7 @@
   font-family: EpundaSlab;
   font-weight: 400;
   font-size: 50px;
-  color: var(--main-text-color);
+  color: var(--landing-page-text-color);
 
   margin-top: 5rem;
   margin-left: 15%;
@@ -78,6 +79,7 @@
 }
 
 .rotatingText {
+  color: var(--landing-page-text-color);
   font-weight: 600;
   font-size: 70px;
 }

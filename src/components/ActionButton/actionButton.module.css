@@ -6,3 +6,7 @@
     background: var(--action-button-bg-color) !important;
     color: var(--action-button-text-color) !important;
 }
+
+.button:hover {
+    background-color: var(--action-button-hover-bg-color) !important;
+}

@@ -22,7 +22,7 @@ export default function Hero() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 3 }}
             >
-                <FloatingPapers count={18} />
+                {/* <FloatingPapers count={18} /> */}
                 <div className={styles.centerDiv}>
                     <p className={styles.centerText}>The Best Designed</p>
                     <motion.div className={styles.innerCenterDiv}>
