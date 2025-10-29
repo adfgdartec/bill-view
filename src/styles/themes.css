@@ -61,74 +61,36 @@
 }
 
 [data-theme="dark"] {
-  /* General Colors */
-  --bg-color: #ACA59E;
-  --card-bg-color: #F5F5F5;
-  --text-color: #000000;
+  /* Basic Colors */
+  --bg-color: #010211;
 
-  /* Buttons */
-  --button-bg-color: #457778;
-  --button-text-color: #000000;
-  --action-button-bg-color: #009951;
+  /* Header Colors */
+  --header-bg-color: #080808;
+  --header-text-color: #d8d8d8;
+
+  /* Action Button Colors */
+  --action-button-bg-color: #10A37F;
   --action-button-text-color: #000000;
+  --action-button-hover-bg-color: #1AAE83;
 
-  /* Menu Bar */
-  --menu-bar-bg-color: #ACA59E;
-  --menu-bar-text-color: #000000;
-
-  /* Tags Selection Bar */
-  --tag-selection-bar-bg-color: #ACA59E;
-
-  /* Tags Selection Bar Topics */
-  --tag-selection-bar-topic-selected-bg-color: #007A41;
-  --tag-selection-bar-topic-selected-text-color: #000000;
-  --tag-selection-bar-topic-unselected-bg-color: #A6C6A9;
-  --tag-selection-bar-topic-unselected-text-color: #000000;
-
-  /* Bill Colors */
-  --card-bg-color: #F5F5F5;
-  --card-icon-bg-color: #F5F5F5;
-  --card-news-bg-color: #F5F5F5;
-
-  /* BillViewHeader */
-  --bill-view-header-bg-color: #5D5F6B;
-  --bill-view-header-text-color: #000000;
-
-  /* Homepage Colors */
-  --latest-bills-bg-color: rgb(245, 245, 245);
-  --tracking-bills-bg-color: #F5F5F5;
+  /* Landing Page Colors */
+  --landing-page-bg-color: #010211;
+  --landing-page-text-color: #d8d8d8;
   --main-text-important-color: linear-gradient(
     270deg,
-    #f7a14b,  /* bright cyan */
-    #c9902c,  /* vibrant blue */
-    #dca331,  /* aqua/teal */
-    #af641f,  /* sky blue */
-    #a15f139d   /* loop back to cyan */
+    #dfdfdf,  /* bright cyan */
+    #f3f3f3,  /* vibrant blue */
+    #ebebeb,  /* aqua/teal */
+    #e0e0e0,  /* sky blue */
+    #dfdfdf   /* loop back to cyan */
   );
-  --main-text-color: #000000;
+
+  /* Feature Pages Colors (Part of Landing Page) */
+  --feature-page-bg-color: #010211;
+  --feature-page-text-color: #d8d8d8;
+  --feature-page-card-bg-color: #444654;
 
 
-  /* About Us  */
-  --box-bg-color: #F5F5F5;
-  --testing-color: rgb(207, 166, 125);
-
-  /* Animation Colors */
-  --paper-box-animatation-background-color: linear-gradient(180deg, rgba(245, 245, 245, 0.98), rgba(254, 254, 254, 0.98));
-}
-
-[data-theme="blue"] {
-  /* General Colors */
-  --bg-color: ;
-  --card-bg-color: ;
-  --text-color: ;
-
-  /* Buttons */
-  --button-bg-color: ;
-  --button-text-color: ;
-  --action-button-bg-color: ;
-  --action-button-text-color: ;
-
-  /* Menu Bar */
-  --menu-bar-bg-color: ;
-  --menu-bar-text-color: ;
+  /* --tracking-bills-bg-color: #F5F5F5; */
+  /* --latest-bills-bg-color: rgb(245, 245, 245); */
 }

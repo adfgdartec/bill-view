@@ -7,6 +7,9 @@ import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 
+// Other React Imports
+import { useState } from 'react';
+
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -50,17 +53,22 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function FilteringTags(props) {
+    const [showAllTags, setShowAllTags] = useState(false);
 
     function handleClick(event) {
         const tagId = parseInt(event.currentTarget.id);
         props.setTags(tags => tags.map(tag => tag.id === tagId ? { ...tag, selected: !tag.selected } : tag));
     }
 
+    function handleShowTagsClick() {
+        setShowAllTags(showAllTags => !showAllTags);
+    }
+
     return (
         <div className={styles.container}>
-            <p className={styles.addTagLabel}>Add Tags</p>
+            <p className={styles.addTagLabel} onClick={handleShowTagsClick}>All Tags</p>
 
-            <div className={styles.tags}>
+            <div className={`${styles.tags} ${showAllTags && styles.showAllTags}`}>
                 { console.log(props.tags) }
                 {props.tags?.map(tag => {
                     return (

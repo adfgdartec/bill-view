@@ -1,0 +1,44 @@
+/* General Colors */
+  --bg-color: #121212;
+  --card-bg-color: #1E1E1E;
+  --text-color: #EAEAEA;
+
+
+  /* Buttons */
+  --button-bg-color: #457778;
+  --button-text-color: #000000;
+  --action-button-bg-color: #009951;
+  --action-button-text-color: #000000;
+
+  /* Menu Bar */
+  --menu-bar-bg-color: #ACA59E;
+  --menu-bar-text-color: #000000;
+
+  /* Tags Selection Bar */
+  --tag-selection-bar-bg-color: #ACA59E;
+
+  /* Tags Selection Bar Topics */
+  --tag-selection-bar-topic-selected-bg-color: #007A41;
+  --tag-selection-bar-topic-selected-text-color: #000000;
+  --tag-selection-bar-topic-unselected-bg-color: #A6C6A9;
+  --tag-selection-bar-topic-unselected-text-color: #000000;
+
+  /* Bill Colors */
+  --card-bg-color: #F5F5F5;
+  --card-icon-bg-color: #F5F5F5;
+  --card-news-bg-color: #F5F5F5;
+
+  /* BillViewHeader */
+  --bill-view-header-bg-color: #5D5F6B;
+  --bill-view-header-text-color: #000000;
+
+  /* Homepage Colors */
+  
+
+
+  /* About Us  */
+  --box-bg-color: #F5F5F5;
+  --testing-color: rgb(207, 166, 125);
+
+  /* Animation Colors */
+  --paper-box-animatation-background-color: linear-gradient(180deg, rgba(245, 245, 245, 0.98), rgba(254, 254, 254, 0.98));

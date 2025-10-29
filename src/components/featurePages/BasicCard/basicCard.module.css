@@ -1,0 +1,4 @@
+.basicCard {
+    background-color: var(--feature-page-card-bg-color);
+    color: var(--feature-page-text-color) !important;
+}

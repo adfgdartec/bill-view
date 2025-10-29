@@ -1,6 +1,6 @@
 // React Imports
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 // import { AuthProvider } from './hooks/useAuth.jsx';
 
 // Pages Imports
@@ -19,9 +19,9 @@ import './styles/themes.css';
 import './styles/fonts.css';
 
 function App() {
-    // useEffect(() => {
-    // document.documentElement.setAttribute('data-theme', 'dark');
-    // }, []);
+    useEffect(() => {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    }, []);
     return (
         <BrowserRouter>
             <Routes>
