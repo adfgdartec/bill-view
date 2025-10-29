@@ -366,10 +366,10 @@ for i in range(0, limit):
         r = requests.get(text)
         text_html = r.text
 
-    summary = run(fetch_data(0, number + "/summaries"))
-    subject = run(fetch_data(0, number + "/subjects"))["subjects"]["legislativeSubjects"]
+    # summary = run(fetch_data(0, number + "/summaries"))
+    # subject = run(fetch_data(0, number + "/subjects"))["subjects"]["legislativeSubjects"]
     # print(text)
-    print(subject)
+    print(analyze_bill(text_html))
     # print(json.dumps(data, indent=4))
     # print(data["bills"][i]["congress"])
     # print(summary["summaries"])
