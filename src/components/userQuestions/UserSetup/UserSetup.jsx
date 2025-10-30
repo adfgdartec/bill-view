@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 
 // Stylesheet
-import styles from './UserSetup.module.css';
+import styles from './userSetup.module.css';
 
 // Components
 import ActionButton from '../../ActionButton/ActionButton';
@@ -16,7 +16,7 @@ import FirstQuestion from '../questions/FirstQuestion/FirstQuestion';
 import SecondQuestion from '../questions/SecondQuestion/SecondQuestion';
 import ThirdQuestion from '../questions/ThirdQuestion/ThirdQuestion';
 import FourthQuestion from '../questions/FourthQuestion/FourthQuestion';
-import FifthQuestion from '../questions/fifthQuestion/fifthQuestion';
+import FifthQuestion from '../questions/fifthQuestion/FifthQuestion.jsx';
 
 const topics = [
     { id: 1, label: "topic1" },

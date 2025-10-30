@@ -1,5 +1,5 @@
 // Stylesheet
-import styles from './SecondQuestion.module.css';
+import styles from './secondQuestion.module.css';
 
 // Components
 import ToggleButton from '@mui/material/ToggleButton';

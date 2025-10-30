@@ -19,7 +19,7 @@ import re
 db = psycopg2.connect(database="bill-view-test",
                         host="localhost",
                         user="postgres",
-                        password="Reddy123!",
+                        password=os.getenv("dbpass"),
                         port="5432")
 
 cursor = db.cursor()
@@ -263,27 +263,27 @@ def call_ollama(bill_text: str, docs: list[dict]):
         for d in docs
     ])
     prompt = f"""You are a legislative analysis AI.
-
-BILL TEXT:
-{bill_text}
-
-SCRAPED / API CONTEXT METADATA:
-{context_repr}
-
-Given the bill text + all context metadata, respond with JSON with these keys:
-- deep_summary
-- short_summary
-- subject_area
-- committees
-- sponsors
-- status
-- amendments
-- house_senate_differences
-- votes_summary
-- chance_to_pass_percent
-
-Make sure the JSON is valid.
-"""
+    
+    BILL TEXT:
+    {bill_text}
+    
+    SCRAPED / API CONTEXT METADATA:
+    {context_repr}
+    
+    Given the bill text + all context metadata, respond with JSON with these keys:
+    "deep_summary": "Provide a comprehensive 12-16 or more analysis explaining the bill’s main objectives, mechanisms, implications, and potential impact on existing law or policy. Include details on who it affects and how it fits into broader political or policy contexts.",
+  "short_summary": "Provide a concise summary of at most 2 sentences capturing the essence of the bill.",
+  "subject_area": "Identify the main policy or issue area (e.g., healthcare, education, defense, energy).",
+  "committees": "List the committees currently reviewing or assigned to the bill.",
+  "sponsors": "List the primary sponsors and co-sponsors, if available.",
+  "status": "Summarize the current legislative status (e.g., introduced, passed House, in committee, signed into law).",
+  "amendments": "Summarize any major amendments or proposed changes, if known.",
+  "house_senate_differences": "Summarize key differences between House and Senate versions, if applicable.",
+  "votes_summary": "Summarize major vote results and margins in each chamber, if available.",
+  "chance_to_pass_percent": "Estimate the probability (0–100%) that the bill will pass based on available data and context."
+    
+    Make sure the JSON is valid.
+    """
     resp = chat(model="bill-analyzer", messages=[{"role":"user", "content":prompt}])
     out = resp["message"]["content"]
     try:
@@ -332,9 +332,8 @@ def analyze_bill(bill_text: str):
 #   # Print the tool call
 #   if chunk.message.tool_calls:
 #     print(chunk.message.tool_calls)
-limit = 25
+limit = 5744
 # 5744
-
 #insert db
 async def fetch_data(page: str, endpoint = "", type="hr/"):
     external_api_url = "https://api.congress.gov/v3/bill/119/" + type + endpoint + "?offset=" + str(page) + "&limit="+ str(limit) + "&api_key=QtI83GenQb7n6jCofB5iHTYrGXzYnlDpwZ7ek4mc" # Example external API
@@ -354,8 +353,8 @@ async def fetch_data(page: str, endpoint = "", type="hr/"):
 data = run(fetch_data(0))
 text = run(fetch_data(0, ""))
 
-for i in range(0, limit):
-    data = run(fetch_data(0))
+for i in range(250, limit):
+    data = run(fetch_data(0))#0
     number = str(data["bills"][i]["number"])
     text = run(fetch_data(0, number + "/text"))["textVersions"]
     if len(text) < 1:
@@ -366,15 +365,13 @@ for i in range(0, limit):
         r = requests.get(text)
         text_html = r.text
 
-    # summary = run(fetch_data(0, number + "/summaries"))
-    # subject = run(fetch_data(0, number + "/subjects"))["subjects"]["legislativeSubjects"]
-    # print(text)
-    print(analyze_bill(text_html))
+    summary = run(fetch_data(0, number + "/summaries"))
+    subject = run(fetch_data(0, number + "/subjects"))["subjects"]["legislativeSubjects"]
+    analyze = analyze_bill(text_html)
+    print(analyze)
     # print(json.dumps(data, indent=4))
     # print(data["bills"][i]["congress"])
     # print(summary["summaries"])
     # print(summary["summaries"][0]["text"] if len(summary["summaries"]) > 0 else "null" )
-    cursor.execute("INSERT INTO test (title, congress, bill_number, summary, text, subjects) VALUES (%s, %s, %s, %s, %s, %s)", (data["bills"][i]["title"],  data["bills"][i]["congress"], data["bills"][i]["number"], summary["summaries"][0]["text"] if len(summary["summaries"]) > 0 else "null", text_html, str(subject)))
+    cursor.execute("INSERT INTO test (title, congress, bill_number, summary, text, subjects, short_summary, subject_area, committees, sponsors, status, amendments, house_senate_differences, votes_summary, chance_to_pass_percent) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (data["bills"][i]["title"],  data["bills"][i]["congress"], data["bills"][i]["number"], analyze["deep_summary"], text_html, str(subject), analyze["short_summary"], analyze["subject_area"], analyze["committees"], analyze["sponsors"], analyze["status"], analyze["amendments"], analyze["house_senate_differences"], analyze["votes_summary"], analyze["chance_to_pass_percent"]))
     db.commit()
-
-
